@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "org.sorapointa.proto";
+
+
+
+//import "ObstacleInfo_ShapeType.proto";
+import "Rotation.proto";
+import "RotationSpeed.proto";
+import "Vector3Int.proto";
+
+message GMObstacleInfo {
+	enum ShapeType {
+		OBSTACLE_SHAPE_CAPSULE = 0;
+		OBSTACLE_SHAPE_BOX = 1;
+	}
+    int64 timestamp = 13;
+	ShapeType shape = 3;
+	Rotation center = 9;
+	int32 obstacle_id = 15;
+	RotationSpeed rotation = 4;
+	Vector3Int extents = 5;
+}
